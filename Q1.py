@@ -19,4 +19,7 @@ def raizes (a, b, c):
         imaginaria= ((delta) ** (1/2))/(2 * a)
         print ("Parte real=", real," e parte imaginaria=", imaginaria)
         return 1
+    
+    
+raizes (a, b, c)
 
