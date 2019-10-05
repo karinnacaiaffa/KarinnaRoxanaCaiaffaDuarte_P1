@@ -1,18 +1,22 @@
 ############### Questao 3 ##############
 
-pi = 0
-divisor = 1
-razao = 1
-aux = 1
+def pi (iteracoes):
+    elem = 4
+    while iteracoes > 1:
+        denominator = (iteracoes * 2) - 1
+        if iteracoes % 2 == 0:
+            elem -= (4 / denominator)
+        else:
+            elem += (4 / denominator)
+        iteracoes -= 1
+    return elem
 
-while (razao > (5 * 10 ** (-8))) or (razao != (5 * 10 ** (-8))):
-    anterior = pi
-    pi = pi + 4/ (divisor * aux)
-    divisor += 2
-    aux *= -1
+def main():
+    iteracoes = 1
+    print ("Valor de PI com 5x10e-4: ")
+    while abs ( pi (iteracoes + 1)- pi (iteracoes) ) > 5e-4:
+        iteracoes += 1
+    print("Número de iteracoes: ", iteracoes)
+    print("Valor de PI: ", pi (iteracoes + 1))
 
-    razao = (anterior - pi) * aux
-
-    print (pi)
-~                                                                                                                                             
-~                          
+main()
